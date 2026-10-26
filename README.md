@@ -1,6 +1,6 @@
 # React TypeScript Mastery
 
-A starter repository for a maintainable React + TypeScript learning platform, built with Vite, Redux Toolkit, ESLint, and Prettier.
+A practical React + TypeScript learning platform built with Vite, Redux Toolkit, Sass, ESLint, and Prettier.
 
 ## Requirements
 
@@ -18,16 +18,16 @@ Open the local URL printed by Vite.
 
 ## Scripts
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the Vite development server |
-| `npm run build` | Type-check and create a production build |
-| `npm run preview` | Preview the production build locally |
-| `npm run typecheck` | Run TypeScript project checks |
-| `npm run lint` | Run ESLint |
-| `npm run lint:fix` | Apply automatic ESLint fixes |
-| `npm run format` | Format supported files with Prettier |
-| `npm run format:check` | Check formatting without changing files |
+| Command                | Purpose                                  |
+| ---------------------- | ---------------------------------------- |
+| `npm run dev`          | Start the Vite development server        |
+| `npm run build`        | Type-check and create a production build |
+| `npm run preview`      | Preview the production build locally     |
+| `npm run typecheck`    | Run TypeScript project checks            |
+| `npm run lint`         | Run ESLint                               |
+| `npm run lint:fix`     | Apply automatic ESLint fixes             |
+| `npm run format`       | Format supported files with Prettier     |
+| `npm run format:check` | Check formatting without changing files  |
 
 ## Architecture
 
@@ -42,7 +42,7 @@ src/
 ├── pages/                # Route-level screens
 ├── routes/               # Routing configuration (add when needed)
 ├── services/             # Shared API/client integrations
-├── styles/               # Global styles and design tokens
+├── styles/               # Global and application SCSS styles
 ├── types/                # Shared TypeScript types
 ├── utils/                # Framework-agnostic helpers
 ├── App.tsx
@@ -50,6 +50,12 @@ src/
 ```
 
 Feature-specific state and logic should live with the feature. Put genuinely shared UI in `components/`, shared hooks in `hooks/`, and app-wide state setup in `app/`.
+
+Styles are authored in Sass (`.scss`) and compiled by Vite. Global resets and design tokens live in `src/styles/global.scss`; page and component styles live in `src/styles/app.scss`.
+
+The chapter-based learner experience is prototyped in [docs/course-platform-layout.html](./docs/course-platform-layout.html). Open it directly in a browser to explore the curriculum, lesson navigation, video placeholder, and saved progress.
+
+The static-content [development roadmap](./docs/ROADMAP.md) explains the implementation and publishing phases. Published chapter materials are organized under [docs/course-content](./docs/course-content/README.md); [Chapter 1](./docs/course-content/chapter-01/README.md) and [Chapter 2](./docs/course-content/chapter-02/README.md) include notes, coding exercises, and interview questions.
 
 ## Redux Toolkit
 
