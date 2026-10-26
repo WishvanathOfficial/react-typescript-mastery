@@ -17,6 +17,15 @@ $surface: var(--color-surface);
     #0b1020;
 }
 
+.course-route-loading {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  background: #0b1020;
+  color: #cbd3e6;
+  font-size: 14px;
+}
+
 .page-container {
   width: min($page-width, calc(100% - 64px));
   margin-inline: auto;

@@ -35,8 +35,9 @@ Keep the content page visually consistent. A useful lesson rhythm is:
 
 - **Frontend:** React, TypeScript, Vite, and Sass, using the repository's
   existing setup.
-- **Routing:** Add React Router when the prototype is implemented as application
-  pages. Use stable, readable URLs such as `/course/chapter-01/lesson-01`.
+- **Routing:** The application uses React Router with hash-based URLs such as
+  `/#/course/chapter-01/lesson-01`. Hash routing supports direct lesson links on
+  static hosts such as GitHub Pages without server-side fallback configuration.
 - **Course material:** Markdown files organized by chapter in `docs/course-content/`.
   Keep lesson metadata (title, order, video ID, and content links) in typed
   course data in the application. This keeps the content readable in Git and
@@ -111,7 +112,8 @@ content or private services.
 - Build a shared course layout with chapter navigation, lesson content, and a
   responsive table of contents.
 - Add routes for course, chapters, and lessons; support direct links and browser
-  back/forward navigation.
+  back/forward navigation. Use hash URLs for GitHub Pages unless deployment is
+  configured to provide an SPA fallback.
 - Load the selected lesson's video and content links from typed course data.
 - Keep the standalone `course-platform-layout.html` as a design reference until
   the React layout covers its use cases.

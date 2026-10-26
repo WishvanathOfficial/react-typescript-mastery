@@ -1,29 +1,42 @@
+import { lazy, Suspense } from 'react';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { decrement, increment, reset } from './features/counter/counterSlice';
+import { HashRouter, Link, Navigate, Route, Routes } from 'react-router-dom';
 import './styles/app.scss';
 
-function App() {
+const CourseDashboard = lazy(() => import('./features/course/CourseDashboard'));
+
+function LandingPage() {
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
+
+  function scrollToSection(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return (
     <div className="site-shell">
       <header className="topbar page-container">
-        <a className="brand" href="#home" aria-label="React TypeScript Mastery home">
+        <Link className="brand" to="/" aria-label="React TypeScript Mastery home">
           <span className="brand-mark" aria-hidden="true">
             R
           </span>
           <span>
             React TypeScript <strong>Mastery</strong>
           </span>
-        </a>
+        </Link>
         <nav className="navigation" aria-label="Main navigation">
-          <a href="#curriculum">Curriculum</a>
-          <a href="#practice">How it works</a>
+          <a href="#curriculum" onClick={(event) => scrollToSection(event, 'curriculum')}>
+            Curriculum
+          </a>
+          <a href="#practice" onClick={(event) => scrollToSection(event, 'practice')}>
+            How it works
+          </a>
         </nav>
-        <a className="button button-primary header-cta" href="#curriculum">
+        <Link className="button button-primary header-cta" to="/course/chapter-01">
           Explore the course <span aria-hidden="true">↗</span>
-        </a>
+        </Link>
       </header>
 
       <main>
@@ -40,10 +53,17 @@ function App() {
               TypeScript by building the kind of apps you’ll be proud to put your name on.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary button-large" href="#curriculum">
+              <Link
+                className="button button-primary button-large"
+                to="/course/chapter-01"
+              >
                 Start building <span aria-hidden="true">→</span>
-              </a>
-              <a className="text-link" href="#practice">
+              </Link>
+              <a
+                className="text-link"
+                href="#practice"
+                onClick={(event) => scrollToSection(event, 'practice')}
+              >
                 See what you’ll build <span aria-hidden="true">↓</span>
               </a>
             </div>
@@ -296,9 +316,9 @@ function App() {
             </h2>
             <p>Start with the fundamentals. Keep building. See what you can make.</p>
           </div>
-          <a className="button button-primary button-large" href="#curriculum">
+          <Link className="button button-primary button-large" to="/course/chapter-01">
             Explore the learning path <span aria-hidden="true">→</span>
-          </a>
+          </Link>
           <div className="cta-decoration" aria-hidden="true">
             &lt;/&gt;
           </div>
@@ -306,22 +326,47 @@ function App() {
       </main>
 
       <footer className="footer page-container">
-        <a className="brand footer-brand" href="#home">
+        <Link className="brand footer-brand" to="/">
           <span className="brand-mark" aria-hidden="true">
             R
           </span>
           <span>
             React TypeScript <strong>Mastery</strong>
           </span>
-        </a>
+        </Link>
         <span>
           Built for learning by doing. <b>·</b> Type-safe by default.
         </span>
-        <a className="back-to-top" href="#home">
+        <a
+          className="back-to-top"
+          href="#home"
+          onClick={(event) => scrollToSection(event, 'home')}
+        >
           Back to top ↑
         </a>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/course/:chapterId/:lessonId?"
+          element={
+            <Suspense
+              fallback={<div className="course-route-loading">Loading course…</div>}
+            >
+              <CourseDashboard />
+            </Suspense>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
