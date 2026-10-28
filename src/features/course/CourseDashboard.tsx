@@ -490,9 +490,7 @@ function CourseDashboard() {
                     to={getCourseLessonPath(chapter, item)}
                     aria-current={item.slug === lesson.slug ? 'true' : undefined}
                   >
-                    <span className="course-lesson-state" aria-hidden="true">
-                      {done ? '✓' : '•'}
-                    </span>
+                    <span className="course-lesson-state" aria-hidden="true" />
                     <span>
                       <span className="course-lesson-link-title">{item.title}</span>
                       <small>
