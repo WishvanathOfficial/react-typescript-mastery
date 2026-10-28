@@ -4,6 +4,12 @@ import chapterOneNotes from '../../../docs/course-content/chapter-01/notes.md?ra
 import chapterTwoExercises from '../../../docs/course-content/chapter-02/exercises.md?raw';
 import chapterTwoInterviews from '../../../docs/course-content/chapter-02/interview-questions.md?raw';
 import chapterTwoNotes from '../../../docs/course-content/chapter-02/notes.md?raw';
+import chapterThreeExercises from '../../../docs/course-content/chapter-03/exercises.md?raw';
+import chapterThreeInterviews from '../../../docs/course-content/chapter-03/interview-questions.md?raw';
+import chapterThreeNotes from '../../../docs/course-content/chapter-03/notes.md?raw';
+import chapterFourExercises from '../../../docs/course-content/chapter-04/exercises.md?raw';
+import chapterFourInterviews from '../../../docs/course-content/chapter-04/interview-questions.md?raw';
+import chapterFourNotes from '../../../docs/course-content/chapter-04/notes.md?raw';
 
 export type CourseResource = 'notes' | 'exercises' | 'interviews';
 
@@ -83,6 +89,11 @@ const parts: Array<{ title: string; chapters: ChapterSeed[] }> = [
           'Mini Project: Course Landing Section with JSX',
         ],
         project: 'Course Landing Section with JSX',
+        materials: {
+          notes: chapterThreeNotes,
+          exercises: chapterThreeExercises,
+          interviews: chapterThreeInterviews,
+        },
       },
     ],
   },
@@ -101,6 +112,11 @@ const parts: Array<{ title: string; chapters: ChapterSeed[] }> = [
           'Mini Project: Shopping Cart Item Manager',
         ],
         project: 'Shopping Cart Item Manager',
+        materials: {
+          notes: chapterFourNotes,
+          exercises: chapterFourExercises,
+          interviews: chapterFourInterviews,
+        },
       },
       {
         part: 'Part 2 — Core React with TypeScript',

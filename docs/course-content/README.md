@@ -10,5 +10,8 @@ chapter should provide:
 
 Keep content in Git, use relative links, and add a chapter folder when it is
 ready for learners. See the [development roadmap](../ROADMAP.md) for the
-publishing workflow. [Chapter 1](./chapter-01/README.md) and
-[Chapter 2](./chapter-02/README.md) are the first published examples.
+publishing workflow. Published chapters include
+[Chapter 1](./chapter-01/README.md),
+[Chapter 2](./chapter-02/README.md),
+[Chapter 3](./chapter-03/README.md), and
+[Chapter 4](./chapter-04/README.md).

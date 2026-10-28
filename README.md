@@ -55,7 +55,7 @@ Styles are authored in Sass (`.scss`) and compiled by Vite. Global resets and de
 
 The chapter-based learner experience is implemented in the React app. Select **Explore the course** to open the dashboard; it uses hash-based chapter and lesson URLs so direct links work on GitHub Pages. Chapter notes, exercises, and interview questions are rendered from Git-tracked Markdown. The original wireframe is retained at [docs/course-platform-layout.html](./docs/course-platform-layout.html).
 
-The static-content [development roadmap](./docs/ROADMAP.md) explains the implementation and publishing phases. Published chapter materials are organized under [docs/course-content](./docs/course-content/README.md); [Chapter 1](./docs/course-content/chapter-01/README.md) and [Chapter 2](./docs/course-content/chapter-02/README.md) include notes, coding exercises, and interview questions. Add each published YouTube video ID to its lesson's `videoId` in `src/features/course/courseData.ts`.
+The static-content [development roadmap](./docs/ROADMAP.md) explains the implementation and publishing phases. Published chapter materials are organized under [docs/course-content](./docs/course-content/README.md); [Chapter 1](./docs/course-content/chapter-01/README.md), [Chapter 2](./docs/course-content/chapter-02/README.md), [Chapter 3](./docs/course-content/chapter-03/README.md), and [Chapter 4](./docs/course-content/chapter-04/README.md) include notes, coding exercises, and interview questions. Add each published YouTube video ID to its lesson's `videoId` in `src/features/course/courseData.ts`.
 
 ## Redux Toolkit
 
