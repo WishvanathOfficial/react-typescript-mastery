@@ -10,6 +10,9 @@ import chapterThreeNotes from '../../../docs/course-content/chapter-03/notes.md?
 import chapterFourExercises from '../../../docs/course-content/chapter-04/exercises.md?raw';
 import chapterFourInterviews from '../../../docs/course-content/chapter-04/interview-questions.md?raw';
 import chapterFourNotes from '../../../docs/course-content/chapter-04/notes.md?raw';
+import chapterFiveExercises from '../../../docs/course-content/chapter-05/exercises.md?raw';
+import chapterFiveInterviews from '../../../docs/course-content/chapter-05/interview-questions.md?raw';
+import chapterFiveNotes from '../../../docs/course-content/chapter-05/notes.md?raw';
 
 export type CourseResource = 'notes' | 'exercises' | 'interviews';
 
@@ -130,6 +133,11 @@ const parts: Array<{ title: string; chapters: ChapterSeed[] }> = [
           'Mini Project: Employee Directory Component Design',
         ],
         project: 'Employee Directory Component Design',
+        materials: {
+          notes: chapterFiveNotes,
+          exercises: chapterFiveExercises,
+          interviews: chapterFiveInterviews,
+        },
       },
       {
         part: 'Part 2 — Core React with TypeScript',

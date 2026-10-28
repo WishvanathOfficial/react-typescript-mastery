@@ -13,5 +13,6 @@ ready for learners. See the [development roadmap](../ROADMAP.md) for the
 publishing workflow. Published chapters include
 [Chapter 1](./chapter-01/README.md),
 [Chapter 2](./chapter-02/README.md),
-[Chapter 3](./chapter-03/README.md), and
-[Chapter 4](./chapter-04/README.md).
+[Chapter 3](./chapter-03/README.md),
+[Chapter 4](./chapter-04/README.md), and
+[Chapter 5](./chapter-05/README.md).
